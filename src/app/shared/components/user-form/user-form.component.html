@@ -1,0 +1,124 @@
+<div class="form-container">
+  <form #userCreateForm="ngForm" novalidate>
+    <div class="mb-3 row">
+      <label for="uname" class="col-sm-2 col-form-label">Username: </label>
+      <div class="col-sm-10">
+        <input
+          id="uname"
+          name="uname"
+          type="text"
+          class="form-control"
+          placeholder="Enter UserName"
+          #uname="ngModel"
+          ngModel
+          required
+          minlength="5"
+        />
+
+        <ng-container *ngIf="!uname?.valid && (uname?.dirty || uname?.touched || userCreateForm.submitted)">
+          <b class="text-danger" *ngIf="uname.hasError('required')">
+            * Username is required!
+          </b>
+          <b class="text-danger" *ngIf="uname.hasError('minlength')">
+            Username minimum length is
+            {{ uname.getError("minlength").requiredLength }}
+          </b>
+        </ng-container>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="fname" class="col-sm-2 col-form-label">First Name: </label>
+      <div class="col-sm-10">
+        <input
+          id="fname"
+          name="fname"
+          type="text"
+          class="form-control"
+          placeholder="Enter First Name"
+          #fname="ngModel"
+          ngModel
+          required
+        />
+
+        <ng-container *ngIf="!fname?.valid && (fname?.dirty || fname?.touched || userCreateForm.submitted)">
+          <b class="text-danger" *ngIf="fname.hasError('required')">
+            * FirstName is required!
+          </b>
+        </ng-container>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="lname" class="col-sm-2 col-form-label">Last Name: </label>
+      <div class="col-sm-10">
+        <input
+          id="lname"
+          name="lname"
+          type="text"
+          class="form-control"
+          placeholder="Enter Last Name"
+          #lname="ngModel"
+          ngModel
+          required
+        />
+
+        <ng-container *ngIf="!lname?.valid && (lname?.dirty || lname?.touched || userCreateForm.submitted)">
+          <b class="text-danger" *ngIf="lname.hasError('required')">
+            * LastName is required!
+          </b>
+        </ng-container>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="email" class="col-sm-2 col-form-label">Email: </label>
+      <div class="col-sm-10">
+        <input
+          id="email"
+          name="email"
+          type="text"
+          class="form-control"
+          placeholder="Enter Email"
+          #email="ngModel"
+          ngModel
+          required
+        />
+
+        <ng-container *ngIf="!email?.valid && (email?.dirty || email?.touched || userCreateForm.submitted)">
+          <b class="text-danger" *ngIf="email.hasError('required')">
+            * Email is required!
+          </b>
+        </ng-container>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="age" class="col-sm-2 col-form-label">Age: </label>
+      <div class="col-sm-10">
+        <input
+          id="age"
+          name="age"
+          type="text"
+          class="form-control"
+          placeholder="Enter Age"
+          #age="ngModel"
+          ngModel
+          required
+        />
+
+        <ng-container *ngIf="!age?.valid && (age?.dirty || age?.touched || userCreateForm.submitted)">
+          <b class="text-danger" *ngIf="age.hasError('required')">
+            * Age is required!
+          </b>
+        </ng-container>
+      </div>
+    </div>
+    <div class="mt-4 text-center">
+      <button
+        type="submit"
+        id="createBtn"
+        class="btn btn-lg btn-primary"
+        (click)="onSubmit(userCreateForm)"
+      >
+        {{ submitBtnText }}
+      </button>
+    </div>
+  </form>
+</div>

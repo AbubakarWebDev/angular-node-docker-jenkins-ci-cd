@@ -1,0 +1,1 @@
+export * from "./delete-data/delete-data.component";

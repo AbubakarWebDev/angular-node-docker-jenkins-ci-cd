@@ -1,0 +1,137 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Update Record</h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  ></button>
+</div>
+<div class="modal-body">
+  <form #userEditForm="ngForm" novalidate>
+    <div class="mb-2">
+      <label for="fname" class="form-label">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="uname"
+        name="uname"
+        #uname="ngModel"
+        ngModel
+        required
+      />
+      <ng-container
+        *ngIf="
+          !uname?.valid &&
+          (uname?.dirty || uname?.touched || userEditForm.submitted)
+        "
+      >
+        <b class="text-danger mt-2" *ngIf="uname.hasError('required')">
+          * UserName is required!
+        </b>
+      </ng-container>
+    </div>
+    <div class="mb-2">
+      <label for="fname" class="form-label">First Name</label>
+      <input
+        type="email"
+        class="form-control"
+        id="fname"
+        name="fname"
+        #fname="ngModel"
+        ngModel
+        required
+      />
+      <ng-container
+        *ngIf="
+          !fname?.valid &&
+          (fname?.dirty || fname?.touched || userEditForm.submitted)
+        "
+      >
+        <b class="text-danger mt-2" *ngIf="fname.hasError('required')">
+          * FirstName is required!
+        </b>
+      </ng-container>
+    </div>
+    <div class="mb-2">
+      <label for="lname" class="form-label">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="lname"
+        name="lname"
+        #lname="ngModel"
+        ngModel
+        required
+      />
+      <ng-container
+        *ngIf="
+          !lname?.valid &&
+          (lname?.dirty || lname?.touched || userEditForm.submitted)
+        "
+      >
+        <b class="text-danger mt-2" *ngIf="lname.hasError('required')">
+          * LastName is required!
+        </b>
+      </ng-container>
+    </div>
+    <div class="mb-2">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="text"
+        class="form-control"
+        id="email"
+        name="email"
+        #email="ngModel"
+        ngModel
+        required
+      />
+      <ng-container
+        *ngIf="
+          !email?.valid &&
+          (email?.dirty || email?.touched || userEditForm.submitted)
+        "
+      >
+        <b class="text-danger mt-2" *ngIf="email.hasError('required')">
+          * Email is required!
+        </b>
+      </ng-container>
+    </div>
+    <div class="mb-2">
+      <label for="age" class="form-label">Age</label>
+      <input
+        type="text"
+        class="form-control"
+        id="age"
+        name="age"
+        #age="ngModel"
+        ngModel
+      />
+      <ng-container
+        *ngIf="
+          !age?.valid && (age?.dirty || age?.touched || userEditForm.submitted)
+        "
+      >
+        <b class="text-danger mt-2" *ngIf="age.hasError('required')">
+          * Age is required!
+        </b>
+      </ng-container>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-outline-dark"
+    (click)="submitForm(userEditForm)"
+  >
+    Update
+  </button>
+  <button
+    type="button"
+    class="btn btn-outline-dark"
+    (click)="activeModal.dismiss('Close click')"
+  >
+    Cancel
+  </button>
+</div>

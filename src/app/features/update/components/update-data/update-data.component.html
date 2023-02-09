@@ -1,0 +1,45 @@
+<div class="form-container mb-3">
+  <form method="post" #userSearchForm="ngForm" novalidate>
+    <div class="mb-3 row">
+      <label for="uname" class="col-sm-2 col-form-label">Username: </label>
+      <div class="col-sm-10">
+        <div class="d-flex">
+            <input
+              id="uname"
+              name="uname"
+              type="text"
+              class="form-control"
+              placeholder="Enter UserName"
+              #uname="ngModel"
+              ngModel
+              required
+            />
+    
+            <button
+              type="submit"
+              class="btn btn-lg btn-primary flex-shrink-0 ms-3"
+              (click)="searchUsername(userSearchForm)"
+            >
+              Search User
+            </button>
+        </div>
+
+        <ng-container
+          *ngIf="
+            !uname?.valid &&
+            (uname?.dirty || uname?.touched || userSearchForm.submitted)
+          "
+        >
+          <b class="text-danger" *ngIf="uname.hasError('required')">
+            * Username is required!
+          </b>
+        </ng-container>
+      </div>
+    </div>
+  </form>
+</div>
+
+<app-user-form
+  *ngIf="userExist"
+  (submitForm)="onSubmit($event)"
+></app-user-form>
