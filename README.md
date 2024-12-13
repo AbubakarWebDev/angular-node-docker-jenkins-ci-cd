@@ -1,27 +1,56 @@
-# Angular User Management with Jenkins and docker CI/CD Pipeline - Deploy on AWS EC2 
+# Angular User Management System with CI/CD Pipeline using Jenkins and Docker on AWS
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
+This repository contains the implementation of a User Management System with an integrated CI/CD pipeline using Docker, Jenkins, and deployed on AWS. The system allows you to manage users, including CRUD operations, and automates the deployment process through Jenkins and Docker.
 
-## Development server
+## Features
+- **User Management**: Create, read, update, and delete users.
+- **CI/CD Pipeline**: Automates testing, building, and deployment.
+- **Docker Integration**: Containerizes the application for easy deployment.
+- **Jenkins Integration**: Automates the entire process through Jenkins.
+- **AWS Deployment**: The application is deployed on AWS, using services such as EC2, S3, and RDS.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Prerequisites
+To run the system locally or deploy it using the CI/CD pipeline, you need the following:
 
-## Code scaffolding
+- **Docker**: To containerize the application.
+- **Jenkins**: To automate the pipeline.
+- **AWS Account**: For deploying the application on AWS.
+- **Git**: To clone the repository.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started
 
-## Build
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+You'll need [Git](https://git-scm.com), and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer.
 
-## Running unit tests
+```
+node@18.0.0 or higher
+npm@10.0.0 or higher
+git@2.39.0 or higher
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Clone the repo
 
-## Running end-to-end tests
+```shell
+git clone https://github.com/AbubakarWebDev/angular-node-docker-jenkins-ci-cd
+cd angular-node-docker-jenkins-ci-cd
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Install npm packages
 
-## Further help
+Install the `npm` packages described in the `package.json` and verify that it works:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```shell
+npm install
+npm run dev
+```
+
+## Contribute Guide
+
+Here’s an improved version of your sentence:
+
+If anyone wants to contribute to improving this further, don't hesitate - start creating a PR!
+
+Keep Growing!
+
+
